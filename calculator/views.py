@@ -11,13 +11,13 @@ def sub(a, b ):
 def mul(a, b ):
     return a * b 
 
-def div(a, b ):
+def div(a, b):
     try:
         return a / b 
     except ZeroDivisionError:
         return "Error"
 
-def mod(a, b ):
+def mod(a, b , c):
     try:
         return a % b 
     except ZeroDivisionError:
