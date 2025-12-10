@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Calculator</title>
+    <style>
+        body { font-family: Arial; background: #f2f2f2; }
+        .container { width: 320px; margin: 40px auto; }
+        input[type=text] {
+            width: 100%;
+            padding: 15px;
+            font-size: 22px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .btn {
+            width: 23%;
+            padding: 15px;
+            margin: 3px;
+            font-size: 22px;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #bbb;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="expression" value="{{ expression }}" readonly>
+        <input type="text" value="{{ result }}" readonly style="background:#d9ffd9;">
+        <br>
+        {% for btn in buttons %}
+            {% if btn == "=" %}
+                <button class="btn" name="button" value="{{ btn }}" style="width:73%;">{{ btn }}</button>
+            {% else %}
+                <button class="btn" name="button" value="{{ btn }}">{{ btn }}</button>
+            {% endif %}
+        {% endfor %}
+
+    </form>
+</div>
+
+</body>
+</html>
