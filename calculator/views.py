@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Calculation
 
-
 def add(a, b):
     return a + b 
 
@@ -34,7 +33,6 @@ def manual_calculate(expr):
                 a = int(a)
                 b = int(b)
            
-
 
                 if op == "+":
                     return add(a, b )
